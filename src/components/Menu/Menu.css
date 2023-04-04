@@ -1,0 +1,17 @@
+nav{
+    width: 280px;
+    height: 100%;
+    background: #1D1D1D;
+    color: #fff;
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav a{
+    color: #fff;
+    text-decoration: none;
+}
