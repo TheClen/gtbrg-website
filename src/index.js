@@ -15,7 +15,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/gtbrg-website" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="editor" element={<Editor />} />
           <Route path="contact" element={<Contact />} />
