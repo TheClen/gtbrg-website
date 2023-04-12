@@ -13,7 +13,7 @@ const Layout = () => {
             <Link to="editor">Editor</Link>
           </li>
           <li>
-            <Link to="contact">Contact</Link>
+            <Link to="contact">Contact tests</Link>
           </li>
         </ul>
       </nav>
