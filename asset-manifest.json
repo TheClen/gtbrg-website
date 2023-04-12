@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/gtbrg-website/static/css/main.4c9d8277.css",
-    "main.js": "/gtbrg-website/static/js/main.4d6e2934.js",
+    "main.js": "/gtbrg-website/static/js/main.29138e2b.js",
     "static/js/787.7b1c84ed.chunk.js": "/gtbrg-website/static/js/787.7b1c84ed.chunk.js",
     "index.html": "/gtbrg-website/index.html",
     "main.4c9d8277.css.map": "/gtbrg-website/static/css/main.4c9d8277.css.map",
-    "main.4d6e2934.js.map": "/gtbrg-website/static/js/main.4d6e2934.js.map",
+    "main.29138e2b.js.map": "/gtbrg-website/static/js/main.29138e2b.js.map",
     "787.7b1c84ed.chunk.js.map": "/gtbrg-website/static/js/787.7b1c84ed.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4c9d8277.css",
-    "static/js/main.4d6e2934.js"
+    "static/js/main.29138e2b.js"
   ]
 }
