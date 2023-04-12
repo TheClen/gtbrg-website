@@ -1,5 +1,12 @@
+import logo from "../../assets/logo.svg"
+
 const Contact = () => {
-    return <h1>Contact</h1>;
+    return(
+      <div>
+        <h1>Contact</h1>
+        <img src={logo} className="App-logo" alt="logo" />
+      </div>
+    );
   };
   
   export default Contact;
