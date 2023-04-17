@@ -1,11 +1,26 @@
 import { Link } from "react-router-dom";
+import MenuProject from "./MenuProjects/MenuProject";
 import './Menu.css';
 
-const Layout = () => {
+const Menu = ({projects, editors}) => {
+  //console.log(projects, editors)
+  //console.log( projects[0])
   return (
     <>
       <nav>
-        <ul>
+        {projects.map((project) =>
+          <MenuProject 
+            key={project.id} 
+            name={project.fields.Name}
+            listEditors={editors.filter(editor => editor.fields.ProjectId[0] === project.id)}
+          />
+        )}
+        {/* {editors.map((editor) =>
+          <span key={editor.id}>
+            {editor.fields.Name}
+          </span>
+        )} */}
+        {/* <ul>
           <li>
             <Link to="./">Home</Link>
           </li>
@@ -16,12 +31,12 @@ const Layout = () => {
             <Link to="./dynamic/2">Dynamic</Link>
           </li>
           <li>
-            <Link to="./contact">Contact tests</Link>
+            <Link to="./contact">Contact</Link>
           </li>
-        </ul>
+        </ul> */}
       </nav>
     </>
   )
 };
 
-export default Layout;
+export default Menu;
