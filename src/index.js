@@ -6,6 +6,7 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home/Home.js';
 import Editor from './pages/Editor/Editor';
 import Contact from './pages/Contact/Contact';
+import Dynamic from './pages/Dynamic/Dynamic';
 import NoPage from './pages/NoPage/NoPage';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -19,6 +20,7 @@ root.render(
           <Route index element={<Home />} />
           <Route path="editor" element={<Editor />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="dynamic/:id" element={<Dynamic />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

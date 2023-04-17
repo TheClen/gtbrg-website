@@ -13,6 +13,9 @@ const Layout = () => {
             <Link to="./editor">Editor</Link>
           </li>
           <li>
+            <Link to="./dynamic/2">Dynamic</Link>
+          </li>
+          <li>
             <Link to="./contact">Contact tests</Link>
           </li>
         </ul>
