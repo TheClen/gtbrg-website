@@ -8,6 +8,7 @@ const Menu = ({projects, editors}) => {
   return (
     <>
       <nav>
+      <strong> <Link to="./">Home</Link></strong>
         {projects.map((project) =>
           <MenuProject 
             key={project.id} 

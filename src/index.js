@@ -4,7 +4,6 @@ import './index.css';
 // import App from './components/App/App';
 import Layout from './components/Layout/Layout';
 import Home from './pages/Home/Home.js';
-import Editor from './pages/Editor/Editor';
 import Contact from './pages/Contact/Contact';
 import Dynamic from './pages/Dynamic/Dynamic';
 import NoPage from './pages/NoPage/NoPage';
@@ -18,7 +17,6 @@ root.render(
       <Routes>
       <Route path="/gtbrg-website" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="editor" element={<Editor />} />
           <Route path="contact" element={<Contact />} />
           <Route path="dynamic/:id" element={<Dynamic />} />
           <Route path="*" element={<NoPage />} />
