@@ -24,8 +24,28 @@ const Editor = ({id}) => {
         
     }
 
-    const setTextAreaHeight = () =>{
+    const setTextAreaHeight = () => {
         textareaRef.current.style.height = (textareaRef.current.scrollHeight - 40) + "px";
+    }
+
+    const handleSave = () => {
+        console.log(id, content);        
+        base('Editors').update([
+          {
+            "id": id,
+            "fields": {
+              "Content": content,
+            }
+          },
+        ], function(err, records) {
+          if (err) {
+            console.error(err);
+            return;
+          }
+          records.forEach(function(record) {
+            console.log(record.get('Editors'));
+          });
+        });
     }
 
     return (
@@ -38,7 +58,7 @@ const Editor = ({id}) => {
                 ref={textareaRef}
             >
             </textarea>
-            
+            <button onClick={handleSave}>Save</button>
         </div> 
     );
 };
