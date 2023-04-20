@@ -7,8 +7,8 @@ nav{
 
 nav ul{
     padding: 0;
-    margin: 0;
-    list-style: none;
+    margin: 0 0 0 20px;
+    list-style: disc;
 }
 
 nav a{
