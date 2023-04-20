@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/gtbrg-website/static/css/main.4c9d8277.css",
-    "main.js": "/gtbrg-website/static/js/main.7a5ab4f1.js",
+    "main.css": "/gtbrg-website/static/css/main.6abf1be6.css",
+    "main.js": "/gtbrg-website/static/js/main.5a35d75b.js",
     "static/js/787.7b1c84ed.chunk.js": "/gtbrg-website/static/js/787.7b1c84ed.chunk.js",
     "static/media/logo.svg": "/gtbrg-website/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/gtbrg-website/index.html",
-    "main.4c9d8277.css.map": "/gtbrg-website/static/css/main.4c9d8277.css.map",
-    "main.7a5ab4f1.js.map": "/gtbrg-website/static/js/main.7a5ab4f1.js.map",
+    "main.6abf1be6.css.map": "/gtbrg-website/static/css/main.6abf1be6.css.map",
+    "main.5a35d75b.js.map": "/gtbrg-website/static/js/main.5a35d75b.js.map",
     "787.7b1c84ed.chunk.js.map": "/gtbrg-website/static/js/787.7b1c84ed.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c9d8277.css",
-    "static/js/main.7a5ab4f1.js"
+    "static/css/main.6abf1be6.css",
+    "static/js/main.5a35d75b.js"
   ]
 }
