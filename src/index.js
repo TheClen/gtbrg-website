@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from "react-dom/client";
+//import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './components/App/App';
 import Layout from './components/Layout/Layout';
@@ -10,12 +11,12 @@ import NoPage from './pages/NoPage/NoPage';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-      <Route path="/gtbrg-website" element={<Layout />}>
+        <Route path="/gtbrg-website" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="contact" element={<Contact />} />
           <Route path="dynamic/:id" element={<Dynamic />} />
