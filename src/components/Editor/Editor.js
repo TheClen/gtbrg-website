@@ -19,7 +19,6 @@ const Editor = ({id}) => {
     const handleChange = (event) =>{
         setContent(event.target.value);
         setTextAreaHeight()
-        
     }
 
     const setTextAreaHeight = () => {
