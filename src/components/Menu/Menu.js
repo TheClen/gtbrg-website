@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import base from "../../api/base"
-import MenuProject from "./MenuProjects/MenuProject";
+import MenuProject from "./MenuProject/MenuProject";
 import MenuFilter from "./MenuFilter/MenuFilter";
 import { ReactComponent as SVGClock } from '../../assets/clock.svg';
 import { ReactComponent as SVGFolders } from '../../assets/folders.svg';
@@ -17,7 +17,9 @@ const Menu = () => {
   const [filter, setFilter] = useState("Recent");
   const dataFetchedRef = useRef(false);
   const [searchParams, setSearchParams] = useSearchParams({});
-
+  const projectClassColors = [
+    "project-red", "project-blue",
+  ]
 
   useEffect(() =>{
     if (dataFetchedRef.current) return;
@@ -40,7 +42,7 @@ const Menu = () => {
 
   const changeFilter = event => {
     setFilter(event.target.value);
-    setSearchParams({ "filter": event.target.value });
+    setSearchParams({ "filter`": event.target.value });
     console.log(event.target.value);
   }
 
@@ -78,9 +80,10 @@ const Menu = () => {
         <hr />
         {loaded === true && 
         <>
-          {projects.map((project) =>
+          {projects.map((project, index) =>
             <MenuProject 
               key={project.id} 
+              classColor={projectClassColors[index % projectClassColors.length]}
               name={project.fields.Name}
               listEditors={editors.filter(editor => editor.fields.ProjectId[0] === project.id)}
             />

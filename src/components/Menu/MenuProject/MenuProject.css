@@ -1,0 +1,48 @@
+
+.project{
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 12px
+}
+
+.project.project-red{
+    background: rgba(222, 104, 101, 0.2);
+}
+
+.project.project-blue{
+    background: rgba(101, 178, 222, 0.2);
+}
+
+.project-header{
+    display: flex;
+    gap: 8px;
+}
+
+.project-header-ico{
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: #DE6865;
+}
+
+.project-header-docs{
+    color: #888888;
+    font-size: 12px;
+}
+
+.project-header-params{
+    position: relative;
+    display: flex;
+    gap: 4px;
+    padding: 5px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+
+.project-header-bullet{
+    width: 3px;
+    height: 3px;
+    background: #D9D9D9;
+    border-radius: 50%;
+}
