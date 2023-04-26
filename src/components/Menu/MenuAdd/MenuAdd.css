@@ -1,0 +1,6 @@
+.menu-add{
+    display: flex;
+    gap: 15px;
+    color: #888888;
+    cursor: pointer;
+}

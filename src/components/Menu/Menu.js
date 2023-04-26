@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
-import { useState } from 'react'
-import { useEffect, useRef } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import { useState, useEffect, useRef } from 'react'
 import base from "../../api/base"
 import MenuProject from "./MenuProject/MenuProject";
 import MenuFilter from "./MenuFilter/MenuFilter";
@@ -83,6 +81,7 @@ const Menu = () => {
           {projects.map((project, index) =>
             <MenuProject 
               key={project.id} 
+              isOpen={index === 0}
               classColor={projectClassColors[index % projectClassColors.length]}
               name={project.fields.Name}
               listEditors={editors.filter(editor => editor.fields.ProjectId[0] === project.id)}

@@ -16,6 +16,7 @@
 .project-header{
     display: flex;
     gap: 8px;
+    cursor: pointer;
 }
 
 .project-header-ico{
@@ -45,4 +46,22 @@
     height: 3px;
     background: #D9D9D9;
     border-radius: 50%;
+}
+
+.project-editors{
+    list-style: none;
+}
+
+.project-editor-item{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.project-editor-ico{
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
 }

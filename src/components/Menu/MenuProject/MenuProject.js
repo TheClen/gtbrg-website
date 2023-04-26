@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import MenuAdd from "../MenuAdd/MenuAdd";
 import './MenuProject.css';
 
-const MenuProject = ({name, listEditors, classColor}) => {
+const MenuProject = ({name, listEditors, classColor, isOpen = false}) => {
+  const [isActive, setIsActive] = useState(isOpen);
+  
   return (
     <div className={`project ${classColor}`}>
-      <div className="project-header">
+      <div className="project-header" onClick={() => setIsActive(!isActive)}>
         <div className="project-header-ico"></div>
         <div className="project-header-content">
           <strong>{name}</strong>
-          <span class="project-header-docs">{listEditors.length} documents</span>
+          <span className="project-header-docs">{listEditors.length} documents</span>
         </div>
         <div className="project-header-params">
           <div className="project-header-bullet"></div>
@@ -16,14 +20,23 @@ const MenuProject = ({name, listEditors, classColor}) => {
           <div className="project-header-bullet"></div>
         </div>
       </div> 
-      <ul>
+      {isActive && 
+        <ul className="project-editors">
         {listEditors.map((editor) =>
-          <li key={editor.id}>
-            <Link to={"./dynamic/"+editor.id}>{editor.fields.Name}</Link>
-          </li>
+          <Link to={"./dynamic/"+editor.id} key={editor.id}>
+            <li 
+              className="project-editor-item" 
+            >
+              <div className="project-editor-ico"></div>
+              <span>{editor.fields.Name}</span>
+            </li>
+          </Link>
         )}
-        <li><button>Add Editor</button></li>
-      </ul>
+          <li key="item-add" className="project-editor-item">
+            <MenuAdd text="Create a new editor" />
+          </li>
+        </ul>
+      }
     </div>
   )
 };
