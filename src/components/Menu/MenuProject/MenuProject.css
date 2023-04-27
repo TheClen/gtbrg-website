@@ -1,8 +1,9 @@
 
 .project{
+    position: relative;
     padding: 15px;
     margin: 15px 0;
-    border-radius: 12px
+    border-radius: 12px;
 }
 
 .project.project-red{
@@ -11,6 +12,20 @@
 
 .project.project-blue{
     background: rgba(101, 178, 222, 0.2);
+}
+
+.project-trangle{
+    position: absolute;
+    top: 24px;
+    left: -12px;
+    transform: rotate(-90deg);
+}
+
+.project.open .project-trangle{
+    position: absolute;
+    top: 24px;
+    left: -12px;
+    transform: none;
 }
 
 .project-header{
@@ -26,9 +41,14 @@
     background: #DE6865;
 }
 
+.project.project-blue .project-header-ico{
+    background: #65B2DE;
+}
+
 .project-header-docs{
     color: #888888;
     font-size: 12px;
+    user-select: none;
 }
 
 .project-header-params{

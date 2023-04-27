@@ -3,9 +3,11 @@ import { useState, useEffect, useRef } from 'react'
 import base from "../../api/base"
 import MenuProject from "./MenuProject/MenuProject";
 import MenuFilter from "./MenuFilter/MenuFilter";
+import MenuAdd from "./MenuAdd/MenuAdd";
 import { ReactComponent as SVGClock } from '../../assets/clock.svg';
 import { ReactComponent as SVGFolders } from '../../assets/folders.svg';
 import { ReactComponent as SVGBin } from '../../assets/bin.svg';
+import srcLogo from '../../assets/logo.svg'
 import './Menu.css';
 
 const Menu = () => {
@@ -47,8 +49,7 @@ const Menu = () => {
   return (
     <>
       <nav>
-        <strong> <Link to="./">Home</Link></strong>
-        <hr />
+        <Link to="./"><img className="menu-logo" src={srcLogo} /></Link>
         <div>
           <MenuFilter 
             title="Recent" 
@@ -75,7 +76,6 @@ const Menu = () => {
             <SVGBin />
           </MenuFilter> 
         </div>
-        <hr />
         {loaded === true && 
         <>
           {projects.map((project, index) =>
@@ -88,11 +88,7 @@ const Menu = () => {
             />
           )}
         </> }
-        {/* {editors.map((editor) =>
-          <span key={editor.id}>
-            {editor.fields.Name}
-          </span>
-        )} */}
+        <MenuAdd text="Create a new project" />
         {/* <ul>
           <li>
             <Link to="./">Home</Link>

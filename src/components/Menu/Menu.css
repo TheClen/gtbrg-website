@@ -7,10 +7,13 @@ nav{
     color: #fff;
 }
 
+.menu-logo{
+    margin: 20px 0 40px 0;
+}
+
 nav ul{
     padding: 0;
     margin: 0 0 0 20px;
-    list-style: disc;
 }
 
 nav a{

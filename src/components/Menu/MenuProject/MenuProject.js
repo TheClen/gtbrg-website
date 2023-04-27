@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import MenuAdd from "../MenuAdd/MenuAdd";
+import srcIcoTriangle from '../../../assets/triangle.svg'
 import './MenuProject.css';
 
 const MenuProject = ({name, listEditors, classColor, isOpen = false}) => {
   const [isActive, setIsActive] = useState(isOpen);
   
   return (
-    <div className={`project ${classColor}`}>
+    <div className={`project ${classColor} ${isActive ? "open" : ""}`}>
+      <img className="project-trangle" src={srcIcoTriangle} />
       <div className="project-header" onClick={() => setIsActive(!isActive)}>
         <div className="project-header-ico"></div>
         <div className="project-header-content">
