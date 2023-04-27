@@ -1,0 +1,24 @@
+.searchbar{
+    display: grid;
+    grid-template-columns: 35px auto 35px;
+    align-items: center;
+    width: 278px;
+    height: 38px;
+    margin: 0 auto;
+    /* padding: 0 52px 0 46px; */
+    border: 1px solid #888888;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#searchbar-input{
+    color: white;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.searchbar-ico{
+    margin: 0 5px;
+    cursor: pointer;
+}
