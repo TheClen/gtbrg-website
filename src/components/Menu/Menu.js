@@ -1,6 +1,7 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { useState, useEffect, useRef } from 'react'
-import base from "../../api/base"
+import getProjects from "../../api/getProjects";
+import getEditors from "../../api/getEditors";
 import MenuProject from "./MenuProject/MenuProject";
 import MenuFilter from "./MenuFilter/MenuFilter";
 import MenuAdd from "./MenuAdd/MenuAdd";
@@ -23,21 +24,19 @@ const Menu = () => {
 
   useEffect(() =>{
     if (dataFetchedRef.current) return;
-    base("projects")
-      .select({view: "Grid view"})
-      .eachPage((records, fetchNextPage) => {
-        setProjects(records);
-        fetchNextPage();
-      })
-    base("editors")
-    .select({view: "Grid view"})
-    .eachPage((records, fetchNextPage) => {
-      setEditors(records);
-      fetchNextPage();
-      setLoaded(true);
-    })
+    refreshMenu()
     dataFetchedRef.current = true;
   }, []);
+
+  const refreshMenu = () => {
+    getProjects((records) => {
+      setProjects(records);
+    })
+    getEditors((records) => {
+      setEditors(records);
+      setLoaded(true);
+    })
+  }
 
   const changeFilter = event => {
     setFilter(event.target.value);

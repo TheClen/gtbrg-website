@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useRef } from 'react';
-import renameRecord from "../../../api/renameRecord";
+import renameProject from "../../../api/renameProject";
 import MenuAdd from "../MenuAdd/MenuAdd";
 import MenuSettings from "../MenuSettings/MenuStettings";
 import srcIcoTriangle from '../../../assets/triangle.svg'
@@ -22,7 +22,7 @@ const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false}) 
     setIsFocus(false);
     refTitle.current.readOnly = true;
     console.log(refTitle.current.value, idRecord);
-    renameRecord(idRecord, refTitle.current.value);
+    renameProject(idRecord, refTitle.current.value);
   }
   
   return (

@@ -1,6 +1,6 @@
 import base from "./base"
 
-const renameRecord = (id, name) => {
+const renameProject = (id, name) => {
     base('Projects').update([
         {
           "id": id,
@@ -19,4 +19,4 @@ const renameRecord = (id, name) => {
       });
 }
 
-export default renameRecord;
+export default renameProject;
