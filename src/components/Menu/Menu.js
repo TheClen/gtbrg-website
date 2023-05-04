@@ -23,7 +23,6 @@ const Menu = () => {
 
   useEffect(() =>{
     if (dataFetchedRef.current) return;
-    console.log("useeffect")
     base("projects")
       .select({view: "Grid view"})
       .eachPage((records, fetchNextPage) => {
@@ -43,13 +42,13 @@ const Menu = () => {
   const changeFilter = event => {
     setFilter(event.target.value);
     setSearchParams({ "filter`": event.target.value });
-    console.log(event.target.value);
+    console.log(searchParams)
   }
 
   return (
     <>
       <nav>
-        <Link to="./"><img className="menu-logo" src={srcLogo} /></Link>
+        <Link to="./"><img className="menu-logo" src={srcLogo} alt="Gutenberg logo"/></Link>
         <div>
           <MenuFilter 
             title="Recent" 
@@ -80,7 +79,8 @@ const Menu = () => {
         <>
           {projects.map((project, index) =>
             <MenuProject 
-              key={project.id} 
+              key={index}
+              idRecord={project.id}
               isOpen={index === 0}
               classColor={projectClassColors[index % projectClassColors.length]}
               name={project.fields.Name}

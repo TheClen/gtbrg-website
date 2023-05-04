@@ -1,0 +1,43 @@
+.menu-settings{
+    display: flex;
+    gap: 4px;
+    padding: 5px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.project-header .menu-settings{
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}
+
+.menu-settings-dot{
+    width: 3px;
+    height: 3px;
+    background: #D9D9D9;
+    border-radius: 50%;
+}
+
+.menu-settings-panel{
+    position: absolute;
+    top: 20px;
+    right: 0;
+    padding: 10px 5px;
+    background: rgba(0,0,0,0.9);
+    user-select: none;
+}
+
+.menu-settings-panel ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-settings-row{
+    padding: 2px 5px;
+}
+
+.menu-settings-row:hover{
+    background: rgba(255,255,255,0.3)
+}

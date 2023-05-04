@@ -1,0 +1,8 @@
+CSS
+- Reset
+- Activer sass
+- Factoriser valeurs (colors, gap, padding, margin)
+- Font family
+
+JS
+- Activer eslint

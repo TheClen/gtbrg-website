@@ -29,8 +29,20 @@
 }
 
 .project-header{
-    display: flex;
+    display: grid;
+    grid-template-columns: 30px auto;
     gap: 8px;
+    cursor: pointer;
+}
+
+.project-title{
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+
+.project-title.mode-readonly{
+    outline: none;
     cursor: pointer;
 }
 

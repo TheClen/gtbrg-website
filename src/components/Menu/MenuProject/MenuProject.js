@@ -1,26 +1,48 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useRef } from 'react';
+import renameRecord from "../../../api/renameRecord";
 import MenuAdd from "../MenuAdd/MenuAdd";
+import MenuSettings from "../MenuSettings/MenuStettings";
 import srcIcoTriangle from '../../../assets/triangle.svg'
 import './MenuProject.css';
 
-const MenuProject = ({name, listEditors, classColor, isOpen = false}) => {
+const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false}) => {
   const [isActive, setIsActive] = useState(isOpen);
+  const [isFocus, setIsFocus] = useState(false);
+  const refTitle = useRef(null);
+
+  const handleRename = () => {
+    setIsFocus(true);
+    refTitle.current.readOnly = false;
+    refTitle.current.focus();
+  }
+
+  const handleFocusOut = () => {
+    setIsFocus(false);
+    refTitle.current.readOnly = true;
+    console.log(refTitle.current.value, idRecord);
+    renameRecord(idRecord, refTitle.current.value);
+  }
   
   return (
     <div className={`project ${classColor} ${isActive ? "open" : ""}`}>
-      <img className="project-trangle" src={srcIcoTriangle} />
+      <img className="project-trangle" src={srcIcoTriangle} alt="open icon"/>
       <div className="project-header" onClick={() => setIsActive(!isActive)}>
         <div className="project-header-ico"></div>
         <div className="project-header-content">
-          <strong>{name}</strong>
+          <input 
+            ref={refTitle} 
+            className={`project-title ${isFocus ? "" : "mode-readonly"}`} 
+            type="text" defaultValue={name} 
+            readOnly
+            onBlur={() => handleFocusOut()}
+          />
           <span className="project-header-docs">{listEditors.length} documents</span>
         </div>
-        <div className="project-header-params">
-          <div className="project-header-bullet"></div>
-          <div className="project-header-bullet"></div>
-          <div className="project-header-bullet"></div>
-        </div>
+        <MenuSettings 
+          clickRename={handleRename}
+        />
       </div> 
       {isActive && 
         <ul className="project-editors">

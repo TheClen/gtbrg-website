@@ -1,0 +1,32 @@
+.panel-item{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.panel-item.active{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.panel-item-tags{
+    display: flex;
+    gap: 8px;
+}
+
+.panel-item-title{
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.panel-item-date{
+    color: #888888;
+}
+
+.panel-item-content{
+    color: #888888;
+}
