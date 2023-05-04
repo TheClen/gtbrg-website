@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './MenuSettings.css';
 
-const MenuSettings = ({clickRename}) => {  
+const MenuSettings = ({clickRename, clickDelete}) => {  
     const [isOpen, setIsOpen] = useState(false);
     const toggleOpen = (event) => {
         event.stopPropagation();
@@ -17,7 +17,7 @@ const MenuSettings = ({clickRename}) => {
             <div className='menu-settings-panel'>
                 <ul>
                     <li className='menu-settings-row' onClick={clickRename}>Rename</li>
-                    <li className='menu-settings-row'>Delete</li>
+                    <li className='menu-settings-row' onClick={clickDelete}>Delete</li>
                 </ul>
             </div>
           )}

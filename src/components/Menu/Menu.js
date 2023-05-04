@@ -2,6 +2,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useState, useEffect, useRef } from 'react'
 import getProjects from "../../api/getProjects";
 import getEditors from "../../api/getEditors";
+import createProject from "../../api/createProject";
 import MenuProject from "./MenuProject/MenuProject";
 import MenuFilter from "./MenuFilter/MenuFilter";
 import MenuAdd from "./MenuAdd/MenuAdd";
@@ -41,7 +42,12 @@ const Menu = () => {
   const changeFilter = event => {
     setFilter(event.target.value);
     setSearchParams({ "filter`": event.target.value });
-    console.log(searchParams)
+  }
+
+  const addProject = () =>{
+    console.log("add project")
+    createProject();
+    refreshMenu()
   }
 
   return (
@@ -84,10 +90,11 @@ const Menu = () => {
               classColor={projectClassColors[index % projectClassColors.length]}
               name={project.fields.Name}
               listEditors={editors.filter(editor => editor.fields.ProjectId[0] === project.id)}
+              deleteRecord={() => refreshMenu()}
             />
           )}
         </> }
-        <MenuAdd text="Create a new project" />
+        <MenuAdd text="Create a new project" clickAdd={() => addProject()}/>
         {/* <ul>
           <li>
             <Link to="./">Home</Link>

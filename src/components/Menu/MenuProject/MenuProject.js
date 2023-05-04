@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useRef } from 'react';
 import renameProject from "../../../api/renameProject";
+import deleteProject from "../../../api/deleteProject";
 import MenuAdd from "../MenuAdd/MenuAdd";
 import MenuSettings from "../MenuSettings/MenuStettings";
 import srcIcoTriangle from '../../../assets/triangle.svg'
 import './MenuProject.css';
 
-const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false}) => {
+const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false, deleteRecord}) => {
   const [isActive, setIsActive] = useState(isOpen);
   const [isFocus, setIsFocus] = useState(false);
   const refTitle = useRef(null);
@@ -23,6 +24,12 @@ const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false}) 
     refTitle.current.readOnly = true;
     console.log(refTitle.current.value, idRecord);
     renameProject(idRecord, refTitle.current.value);
+  }
+
+  const handleDelete = () => {
+    deleteProject(idRecord, () => {
+      deleteRecord();
+    });
   }
   
   return (
@@ -42,6 +49,7 @@ const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false}) 
         </div>
         <MenuSettings 
           clickRename={handleRename}
+          clickDelete={handleDelete}
         />
       </div> 
       {isActive && 
