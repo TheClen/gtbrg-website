@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/gtbrg-website/static/css/main.2f03c852.css",
-    "main.js": "/gtbrg-website/static/js/main.319395bd.js",
+    "main.css": "/gtbrg-website/static/css/main.7535372d.css",
+    "main.js": "/gtbrg-website/static/js/main.2568976c.js",
     "static/js/787.7b1c84ed.chunk.js": "/gtbrg-website/static/js/787.7b1c84ed.chunk.js",
     "static/media/logo.svg": "/gtbrg-website/static/media/logo.e6e43b8cac50765618eb6e4d405a34f9.svg",
     "static/media/bin.svg": "/gtbrg-website/static/media/bin.b87209f1b06523cbf2065d9ff4d54084.svg",
@@ -12,12 +12,12 @@
     "static/media/magn-glass.svg": "/gtbrg-website/static/media/magn-glass.f2558054fb11e7313db526607e67ddaf.svg",
     "static/media/triangle.svg": "/gtbrg-website/static/media/triangle.0bb71a22e52e3b8164a7823c6fc420f5.svg",
     "static/media/plus.svg": "/gtbrg-website/static/media/plus.a808223ce5131b3d8f2baf937e35af82.svg",
-    "main.2f03c852.css.map": "/gtbrg-website/static/css/main.2f03c852.css.map",
-    "main.319395bd.js.map": "/gtbrg-website/static/js/main.319395bd.js.map",
+    "main.7535372d.css.map": "/gtbrg-website/static/css/main.7535372d.css.map",
+    "main.2568976c.js.map": "/gtbrg-website/static/js/main.2568976c.js.map",
     "787.7b1c84ed.chunk.js.map": "/gtbrg-website/static/js/787.7b1c84ed.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f03c852.css",
-    "static/js/main.319395bd.js"
+    "static/css/main.7535372d.css",
+    "static/js/main.2568976c.js"
   ]
 }
