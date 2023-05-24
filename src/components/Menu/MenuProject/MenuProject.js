@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useRef } from 'react';
 import renameProject from "../../../api/renameProject";
 import deleteProject from "../../../api/deleteProject";
+import MenuEditor from "../MenuEditor/MenuEditor";
 import MenuAdd from "../MenuAdd/MenuAdd";
 import MenuSettings from "../MenuSettings/MenuStettings";
 import srcIcoTriangle from '../../../assets/triangle.svg'
@@ -50,19 +51,13 @@ const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false, d
         <MenuSettings 
           clickRename={handleRename}
           clickDelete={handleDelete}
+          stopPropagation
         />
       </div> 
       {isActive && 
         <ul className="project-editors">
         {listEditors.map((editor) =>
-          <Link to={"./dynamic/"+editor.id} key={editor.id}>
-            <li 
-              className="project-editor-item" 
-            >
-              <div className="project-editor-ico"></div>
-              <span>{editor.fields.Name}</span>
-            </li>
-          </Link>
+          <MenuEditor editor={editor}/>
         )}
           <li key="item-add" className="project-editor-item">
             <MenuAdd text="Create a new editor" />
