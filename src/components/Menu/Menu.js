@@ -45,8 +45,9 @@ const Menu = () => {
   }
 
   const addProject = () =>{
-    createProject();
-    refreshMenu();
+    createProject(() => {
+      refreshMenu();
+    });
   }
 
   return (
@@ -89,7 +90,7 @@ const Menu = () => {
               classColor={projectClassColors[index % projectClassColors.length]}
               name={project.fields.Name}
               listEditors={editors.filter(editor => editor.fields.Projects[0] === project.id)}
-              deleteRecord={() => refreshMenu()}
+              onContentChange={() => refreshMenu()}
             />
           )}
         </> }

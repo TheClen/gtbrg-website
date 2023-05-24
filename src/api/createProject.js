@@ -1,13 +1,11 @@
 import base from "./base"
 
-const createProject = () => {
+const createProject = (callback) => {
     base('Projects').create([
         {
           "fields": {
             "Name": "New project",
             "Files": [],
-            "ProjetEditor": [],
-            "Editors": []
           }
         }
       ], function(err, records) {
@@ -18,6 +16,7 @@ const createProject = () => {
         records.forEach(function (record) {
           console.log(record.getId());
         });
+        callback();
       });
 }
 

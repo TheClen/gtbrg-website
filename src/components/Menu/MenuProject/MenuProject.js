@@ -9,7 +9,7 @@ import MenuSettings from "../MenuSettings/MenuStettings";
 import srcIcoTriangle from '../../../assets/triangle.svg'
 import './MenuProject.css';
 
-const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false, deleteRecord}) => {
+const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false, onContentChange}) => {
   const [isActive, setIsActive] = useState(isOpen);
   const [isFocus, setIsFocus] = useState(false);
   const refTitle = useRef(null);
@@ -29,17 +29,17 @@ const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false, d
 
   const handleDelete = () => {
     deleteProject(idRecord, () => {
-      deleteRecord();
+      onContentChange();
     });
   }
 
   const handleDeleteEditor = () => {
-    deleteRecord();
+    onContentChange();
   }
 
   const addEditor = () =>{
     createEditor(idRecord);
-    deleteRecord();
+    onContentChange();
   }
   
   return (
