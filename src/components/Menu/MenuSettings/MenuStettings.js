@@ -1,10 +1,11 @@
 import { useState } from "react";
 import './MenuSettings.css';
 
-const MenuSettings = ({clickRename, clickDelete, stopPropagation}) => {  
+const MenuSettings = ({clickRename, clickDelete, stopPropagation, preventDefault}) => {  
     const [isOpen, setIsOpen] = useState(false);
     const toggleOpen = (event) => {
         if(stopPropagation) event.stopPropagation();
+        if(preventDefault) event.preventDefault();
         setIsOpen(!isOpen);
     }
 

@@ -84,16 +84,6 @@
     list-style: none;
 }
 
-.project-editor-item{
-    display: flex;
-    gap: 8px;
-    align-items: center;
+.editor-add{
     margin-top: 12px;
-}
-
-.project-editor-ico{
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.15);
 }

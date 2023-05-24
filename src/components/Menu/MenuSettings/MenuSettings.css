@@ -12,6 +12,12 @@
     top: 20px;
 }
 
+.project-editor-item .menu-settings{
+    position: absolute;
+    right: 15px;
+    top: 8px;
+}
+
 .menu-settings-dot{
     width: 3px;
     height: 3px;
@@ -26,6 +32,7 @@
     padding: 10px 5px;
     background: rgba(0,0,0,0.9);
     user-select: none;
+    z-index: 10;
 }
 
 .menu-settings-panel ul{

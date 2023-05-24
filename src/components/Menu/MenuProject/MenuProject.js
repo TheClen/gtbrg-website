@@ -1,8 +1,8 @@
-//import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useRef } from 'react';
 import renameProject from "../../../api/renameProject";
 import deleteProject from "../../../api/deleteProject";
+import createEditor from "../../../api/createEditor"
 import MenuEditor from "../MenuEditor/MenuEditor";
 import MenuAdd from "../MenuAdd/MenuAdd";
 import MenuSettings from "../MenuSettings/MenuStettings";
@@ -32,6 +32,15 @@ const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false, d
       deleteRecord();
     });
   }
+
+  const handleDeleteEditor = () => {
+    deleteRecord();
+  }
+
+  const addEditor = () =>{
+    createEditor(idRecord);
+    deleteRecord();
+  }
   
   return (
     <div className={`project ${classColor} ${isActive ? "open" : ""}`}>
@@ -57,10 +66,13 @@ const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false, d
       {isActive && 
         <ul className="project-editors">
         {listEditors.map((editor) =>
-          <MenuEditor editor={editor}/>
+          <MenuEditor 
+            editor={editor} 
+            key={editor.id} 
+            onDeleteEditor={handleDeleteEditor}/>
         )}
-          <li key="item-add" className="project-editor-item">
-            <MenuAdd text="Create a new editor" />
+          <li key="item-add" className="editor-add">
+            <MenuAdd text="Create a new editor" clickAdd={() => addEditor()}/>
           </li>
         </ul>
       }

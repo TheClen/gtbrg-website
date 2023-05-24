@@ -1,0 +1,25 @@
+.project-editor-item{
+    position: relative;
+    display: grid;
+    grid-template-columns: 30px auto;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.editor-ico{
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.editor-title {
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+
+.editor-title.mode-readonly {
+    outline: none;
+    cursor: pointer;
+}
