@@ -1,10 +1,13 @@
-import {useState, useRef} from 'react'
+import { useState, useRef } from 'react'
 import { useEffect } from "react";
-import base from "../../api/base"
+import Wysiwyg from '../Wysiwyg/Wysiwyg';
+import base from "../../api/base";
+import ExampleDocument from '../../utils/ExampleDocument';
 import './Editor.css'
 
 const Editor = ({id}) => {
     const [content, setContent] = useState("");
+    const [document, updateDocument] = useState(ExampleDocument);
     useEffect(() =>{
         base('Editors').find(id, function(err, record) {
             if (err) { console.error(err); return; }
@@ -56,6 +59,7 @@ const Editor = ({id}) => {
             >
             </textarea>
             <button onClick={handleSave}>Save</button>
+            <Wysiwyg document={document} onChange={updateDocument}/>
         </div> 
     );
 };
