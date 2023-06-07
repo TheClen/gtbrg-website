@@ -1,7 +1,7 @@
 import base from "./base"
 
-const deleteEditor = (id, callback) => {
-    base('Editors').destroy([id], function(err, deletedRecords) {
+const deleteEditor = (idList, callback) => {
+    base('Editors').destroy(idList, function(err, deletedRecords) {
         if (err) {
           console.error(err);
           return;

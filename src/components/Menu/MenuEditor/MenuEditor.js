@@ -24,7 +24,7 @@ const MenuEditor = ({editor, onDeleteEditor}) => {
     }
 
     const handleDelete = () => {
-        deleteEditor(editor.id, () => {
+        deleteEditor([editor.id], () => {
             onDeleteEditor();
         });
       }

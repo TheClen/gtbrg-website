@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRef } from 'react';
 import renameProject from "../../../api/renameProject";
 import deleteProject from "../../../api/deleteProject";
+import deleteEditor from "../../../api/deleteEditor";
 import createEditor from "../../../api/createEditor"
 import MenuEditor from "../MenuEditor/MenuEditor";
 import MenuAdd from "../MenuAdd/MenuAdd";
@@ -28,9 +29,11 @@ const MenuProject = ({idRecord, name, listEditors, classColor, isOpen = false, o
   }
 
   const handleDelete = () => {
+    let arrayIdEditors = listEditors.map(a => a.id);
+    deleteEditor(arrayIdEditors); // delete editors of the project
     deleteProject(idRecord, () => {
       onContentChange();
-    });
+    }); // delete project
   }
 
   const handleDeleteEditor = () => {
